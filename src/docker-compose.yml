@@ -1,0 +1,65 @@
+# ===========================================================================
+# Rallly for TerraMaster TOS 7 (multi-container Docker application)
+# ===========================================================================
+# App image : lukevella/rallly:4.17.0 (Docker Hub)
+# Database  : postgres:16-alpine (internal only)
+#
+# Rallly needs 32-character secrets at startup; the wrapper generates them on
+# first start and stores them in /data instead of hard-coding them here.
+
+services:
+  rallydocker:
+    image: lukevella/rallly:4.17.0
+    container_name: rallydocker
+    restart: unless-stopped
+    user: "1000:1000"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        @@ENTRYPOINT_SH@@
+    depends_on:
+      rallydocker-db:
+        condition: service_healthy
+    ports:
+      - "8143:3000"
+    environment:
+      TZ: "Asia/Shanghai"
+      DATABASE_URL: "postgres://rallly@rallydocker-db:5432/rallly"
+      APP_URL: "http://localhost:8143"
+      NEXTAUTH_URL: "http://localhost:8143"
+      NEXT_PUBLIC_BASE_URL: "http://localhost:8143"
+      SUPPORT_EMAIL: "admin@example.com"
+    volumes:
+      - /Volume1/DockerAppData/rallydocker/data:/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "require(\"http\").get(\"http://127.0.0.1:3000/\",r=>process.exit(r.statusCode<500?0:1)).on(\"error\",()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  rallydocker-db:
+    image: postgres:16-alpine
+    container_name: rallydocker-db
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      TZ: "Asia/Shanghai"
+      POSTGRES_USER: "rallly"
+      POSTGRES_DB: "rallly"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - /Volume1/DockerAppData/rallydocker/db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rallly -d rallly"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+# TOS App Center web metadata (must be the last block of the file):
+x-app-meta:
+  web:
+    port: 8143
+    protocol: http

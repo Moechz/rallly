@@ -1,0 +1,195 @@
+# ===========================================================================
+# Multilingual file for the TOS 7 Docker application "rallydocker".
+# File name MUST be: <appid>.lang.  23-language superset (14 required by TOS).
+# The App Center picks the text matching the user's device language;
+# untranslated nodes fall back to English, which the official guide allows.
+# Fields: name (app title), auth (upstream author), descript (up to 512
+# chars), release_note, important (up to 512 chars).
+# Translations come from tosapp.json "translations"; run
+#   tosdocker lang <app>          to re-render this file
+#   tosdocker translate <app>     to see what still needs translating
+# ===========================================================================
+[en-us]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[zh-cn]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "习惯打卡与连续天数统计，界面简洁。"
+release_note = "1. First release."
+important    = "首次使用请打开网页完成初始化。数据保存在 DockerAppData/beaverhabitsdocker，重启和升级不会丢失。容器以 uid 1000 运行，挂载目录需对该用户可读。需要 DockerEngine；Docker Hub 不可达时先配置镜像加速。卸载并删除数据前请备份。局域网内为 HTTP。"
+
+[zh-hk]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "习惯打卡与连续天数统计，界面简洁。"
+release_note = "1. First release."
+important    = "首次使用請開啟網頁完成初始化。資料保存在 DockerAppData/beaverhabitsdocker，重新啟動和升級不會遺失。容器以 uid 1000 運行，掛載目錄需對該使用者可讀。需要 DockerEngine；Docker Hub 不可達時先設定鏡像加速。解除安裝並刪除資料前請備份。區域網路內為 HTTP。"
+
+[fr-fr]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[de-de]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[it-it]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[es-es]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[hu-hu]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[ja-jp]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[ko-kr]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[pl-pl]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[ru-ru]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[tr-tr]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[pt-pt]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[ar-sa]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[cs-cz]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[he-il]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[id-id]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[nb-no]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[nl-nl]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[sv-se]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[th-th]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
+[vi-vn]
+name         = "Rallly"
+auth         = "lukevella"
+version      = "@@VERSION@@"
+descript     = "Rallly is a self-hosted scheduling tool: create a poll, share the link, and let participants vote on dates without signing up, with comments, notifications and iCal export. This package runs the Docker Hub image with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the upstream image does not publish an arm64 variant."
+release_note = "1. First release."
+important    = "Open the web UI on port 8143, sign up for the admin account and create the first poll. The stack contains two containers (app, PostgreSQL); the 32-character application secret is generated on first start. Data lives under /Volume1/DockerAppData/rallydocker/ and survives restarts and updates. Mail is not configured; use in-app links. Needs DockerEngine; configure a registry mirror if Docker Hub is unreachable. Back up the data folder before uninstalling with data removal."
+
