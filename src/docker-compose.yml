@@ -1,17 +1,21 @@
 # ===========================================================================
 # Rallly for TerraMaster TOS 7 (multi-container Docker application)
 # ===========================================================================
-# App image : lukevella/rallly:4.17.0 (Docker Hub)
-# Database  : postgres:16-alpine (internal only)
+# App image : lukevella/rallly:4.17.2 (Docker Hub, multi-arch amd64 + arm64)
+# Database  : postgres:16.16-alpine (internal only; kept on 16.x so an existing
+#             data directory keeps working - a major upgrade needs pg_upgrade)
 #
-# Rallly needs 32-character secrets at startup; the wrapper generates them on
-# first start and stores them in /data instead of hard-coding them here.
+# Rallly needs a 32+ character application secret at startup; the wrapper
+# generates it on first start and stores it in /data instead of hard-coding it
+# here. The public address is learned from the first browser request because
+# the NAS LAN address is not known inside the container.
 
 services:
   rallydocker:
-    image: lukevella/rallly:4.17.0
+    image: lukevella/rallly:4.17.2
     container_name: rallydocker
     restart: unless-stopped
+    init: true
     user: "1000:1000"
     entrypoint: ["/bin/sh", "-c"]
     command:
@@ -25,21 +29,21 @@ services:
     environment:
       TZ: "Asia/Shanghai"
       DATABASE_URL: "postgres://rallly@rallydocker-db:5432/rallly"
-      APP_URL: "http://localhost:8143"
-      NEXTAUTH_URL: "http://localhost:8143"
-      NEXT_PUBLIC_BASE_URL: "http://localhost:8143"
-      SUPPORT_EMAIL: "admin@example.com"
+      TOS_HOST_PORT: "8143"
+      REGISTRATION_ENABLED: "false"
+      SUPPORT_EMAIL: "admin@rallydocker.local"
     volumes:
       - /Volume1/DockerAppData/rallydocker/data:/data
+      - /Volume1/DockerAppData/rallydocker/cache:/app/apps/web/.next/cache
     healthcheck:
-      test: ["CMD", "node", "-e", "require(\"http\").get(\"http://127.0.0.1:3000/\",r=>process.exit(r.statusCode<500?0:1)).on(\"error\",()=>process.exit(1))"]
+      test: ["CMD", "node", "-e", "require(\"http\").get(\"http://127.0.0.1:3000/api/status\",r=>process.exit(r.statusCode===200?0:1)).on(\"error\",()=>process.exit(1))"]
       interval: 30s
       timeout: 10s
       retries: 5
-      start_period: 60s
+      start_period: 180s
 
   rallydocker-db:
-    image: postgres:16-alpine
+    image: postgres:16.16-alpine
     container_name: rallydocker-db
     restart: unless-stopped
     user: "1000:1000"
